@@ -42,19 +42,21 @@ Evaluate a trained model with
 ## How to run our Implementation
 
 ### Before Training 
-- run "./setup_environment.sh" 
-- run "./BPE_training.sh"
+    ./setup_environment.sh
+    ./BPE_training.sh
 
 ### To Train
 After setting up, you can run the training commands from the command line:
-- python3 -m joeynmt train configs/transformer_bpe_4k.yaml
-- python3 -m joeynmt train configs/transformer_bpe_2k.yaml
-- python3 -m joeynmt train configs/transformer_word_2k.yaml
+    python3 -m joeynmt train configs/transformer_bpe_4k.yaml
+ 
+    python3 -m joeynmt train configs/transformer_bpe_2k.yaml
+ 
+    python3 -m joeynmt train configs/transformer_word_2k.yaml
 
 ### For BLEU Evaluation
 To evaluate, run BLEU on the test set (example call):
-- sacrebleu test/test.en -i models/bpe4k/00022500.hyps.test -m bleu -w 4
+    sacrebleu test/test.en -i models/bpe4k/00022500.hyps.test -m bleu -w 4
 
 ### Beam Search Evaluation
 To perform beam searches with different beam sizes: 
-- run "./beam_size_bleu.sh"
+    ./beam_size_bleu.sh
